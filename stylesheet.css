@@ -78,7 +78,7 @@ papertitle {
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 10rem 0; /* 进一步收窄横幅高度 */
+  padding: 14rem 0; /* 进一步收窄横幅高度 */
   position: relative;
 }
 
