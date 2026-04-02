@@ -181,13 +181,28 @@ img {
 
 .map-frame {
   width: 100%;
-  max-width: 400px;
-  min-height: 100px;
+  max-width: 560px;
+  height: 180px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .map-container div {
   max-width: 100%; /* 确保地图容器不会超出父元素 */
   margin: 0 auto;
+}
+
+/* ClustrMaps 会注入自己的容器，显式约束其宽高 */
+#clustrmaps + div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#clustrmaps + div > div,
+#clustrmaps + div canvas,
+#clustrmaps + div iframe {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 footer {
@@ -211,6 +226,11 @@ footer {
   .header {
     min-height: 220px;
     background-position: center 58%;
+  }
+
+  .map-frame {
+    max-width: 480px;
+    height: 150px;
   }
 
   .page-title {
