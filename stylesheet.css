@@ -180,12 +180,6 @@ img {
   padding: 20px 0;
 }
 
-.map-frame {
-  width: 100%;
-  max-width: 800px;
-  min-height: 260px;
-}
-
 .map-container div {
   max-width: 100%; /* 确保地图容器不会超出父元素 */
   margin: 0 auto;
