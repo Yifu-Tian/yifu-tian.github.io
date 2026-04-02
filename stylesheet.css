@@ -75,16 +75,10 @@ papertitle {
 
 .header {
   background-image: url('images/spacex.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-color: #0e1b2a;
-  width: 40%;
-  max-width: 1200px;
-  height: 440px;
-  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
   text-align: center;
-  padding: 12rem 0;
+  padding: 10rem 0; /* 稍微减小padding */
   position: relative;
 }
 
@@ -180,12 +174,6 @@ img {
   padding: 20px 0;
 }
 
-.map-frame {
-  width: 100%;
-  max-width: 800px;
-  min-height: 260px;
-}
-
 .map-container div {
   max-width: 100%; /* 确保地图容器不会超出父元素 */
   margin: 0 auto;
@@ -210,8 +198,7 @@ footer {
   }
 
   .header {
-    min-height: 240px;
-    background-position: center 30%;
+    padding: 6rem 0; /* 减小头部区域的高度 */
   }
 
   .page-title {
