@@ -3,5 +3,5 @@
 Thanks to [Leo](https://github.com/TX-Leo) for the amazing template. This repository contains the source code for my personal academic homepage.
 
 ## Contact
-- Website: yifu3.com
+- Website: www.yifu3.com
 - Email: yifutian@link.cuhk.edu.cn
