@@ -327,6 +327,8 @@ footer {
     scroll-snap-type: x mandatory;
     scroll-padding-left: 2px;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    cursor: grab;
     scrollbar-width: thin;
     scrollbar-color: #b8b8b8 #f2f2f2;
 }
@@ -334,6 +336,9 @@ footer {
 
 .video-card {
     display: block;
+    flex: 0 0 auto;
+    width: 340px;
+    min-width: 340px;
     border: 1px solid #e6e6e6;
     border-radius: 10px;
     overflow: hidden;
@@ -341,6 +346,7 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     color: inherit;
+    scroll-snap-align: start;
 }
 
 .video-card:hover {
