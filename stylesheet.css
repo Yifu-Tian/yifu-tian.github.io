@@ -316,9 +316,10 @@ footer {
 }
 
 /* --- Open Service Videos --- */
-.video-grid {
-    display: flex;
-    flex-wrap: nowrap;
+.open-service .video-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 340px;
     gap: 18px;
     margin-top: 10px;
     padding: 4px 2px 12px;
@@ -329,16 +330,30 @@ footer {
     -webkit-overflow-scrolling: touch;
     touch-action: pan-x;
     cursor: grab;
+    user-select: none;
     scrollbar-width: thin;
     scrollbar-color: #b8b8b8 #f2f2f2;
 }
 
+.open-service .video-grid::-webkit-scrollbar {
+    height: 9px;
+}
 
-.video-card {
+.open-service .video-grid::-webkit-scrollbar-track {
+    background: #f2f2f2;
+    border-radius: 999px;
+}
+
+.open-service .video-grid::-webkit-scrollbar-thumb {
+    background: #b8b8b8;
+    border-radius: 999px;
+}
+
+.open-service .video-card {
     display: block;
-    flex: 0 0 auto;
     width: 340px;
     min-width: 340px;
+    max-width: 340px;
     border: 1px solid #e6e6e6;
     border-radius: 10px;
     overflow: hidden;
@@ -349,12 +364,16 @@ footer {
     scroll-snap-align: start;
 }
 
-.video-card:hover {
+.open-service .video-grid:active {
+    cursor: grabbing;
+}
+
+.open-service .video-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.video-card img {
+.open-service .video-card img {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -385,14 +404,26 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .video-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .open-service .video-grid {
+    grid-auto-columns: 300px;
+  }
+
+  .open-service .video-card {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 600px) {
-  .video-grid {
-    grid-template-columns: 1fr;
+  .open-service .video-grid {
+    grid-auto-columns: calc(100vw - 96px);
+  }
+
+  .open-service .video-card {
+    width: calc(100vw - 96px);
+    min-width: calc(100vw - 96px);
+    max-width: calc(100vw - 96px);
   }
 
   .open-service .video-card img {
