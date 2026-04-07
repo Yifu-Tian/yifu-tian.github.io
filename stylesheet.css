@@ -314,3 +314,74 @@ footer {
 .logo-gallery img:hover {
     transform: scale(1.3);     /* 鼠标悬停时，logo 稍微放大 */
 }
+
+/* --- Open Service Videos --- */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.video-card {
+    display: block;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: inherit;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.video-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* Per-section thumbnail sizing for Open Service. */
+.open-service .video-card img {
+    height: var(--open-service-thumb-height, 210px);
+    aspect-ratio: auto;
+}
+
+.video-card-body {
+    padding: 12px 14px;
+}
+
+.video-card-body h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    color: #222222;
+}
+
+.video-card-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: #5a5a5a;
+}
+
+@media (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .open-service .video-card img {
+    height: 190px;
+  }
+}
+
