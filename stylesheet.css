@@ -148,10 +148,12 @@ papertitle {
 }
 
 @media (min-width: 769px) {
-  .profile-photo {
-    transform: translateX(18px) rotate(-1deg);
+  .profile-info {
+    position: relative;
+    left: 18px;
   }
 }
+
 
 /* 经历部分的Flex布局 */
 .experience-item {
