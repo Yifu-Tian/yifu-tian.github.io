@@ -140,8 +140,8 @@ papertitle {
 }
 
 .profile-photo {
-  width: 88%;
-  max-width: 460px;
+  width: 86%;
+  max-width: 420px;
   margin: 0 auto;
   transform: rotate(-1deg);
   transform-origin: center center;
