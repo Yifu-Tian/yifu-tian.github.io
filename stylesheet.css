@@ -149,10 +149,10 @@ papertitle {
 
 @media (min-width: 769px) {
   .profile-photo {
-    position: relative;
-    left: 10px;
+    transform: translateX(18px) rotate(-1deg);
   }
 }
+
 /* 经历部分的Flex布局 */
 .experience-item {
   display: flex;
