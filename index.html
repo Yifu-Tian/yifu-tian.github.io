@@ -332,9 +332,6 @@ approach.</font>
         suppressClick = false;
         startX = e.clientX;
         startScrollLeft = grid.scrollLeft;
-        if (grid.setPointerCapture) {
-          grid.setPointerCapture(e.pointerId);
-        }
       });
 
       grid.addEventListener('pointermove', function (e) {
