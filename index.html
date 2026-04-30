@@ -322,12 +322,14 @@ approach.</font>
       var isPointerDown = false;
       var startX = 0;
       var startScrollLeft = 0;
-      var moved = false;
+      var dragged = false;
+      var suppressClick = false;
 
       grid.addEventListener('pointerdown', function (e) {
         if (e.pointerType === 'mouse' && e.button !== 0) return;
         isPointerDown = true;
-        moved = false;
+        dragged = false;
+        suppressClick = false;
         startX = e.clientX;
         startScrollLeft = grid.scrollLeft;
         if (grid.setPointerCapture) {
@@ -338,16 +340,17 @@ approach.</font>
       grid.addEventListener('pointermove', function (e) {
         if (!isPointerDown) return;
         var dx = e.clientX - startX;
-        if (Math.abs(dx) > 5) {
-          moved = true;
-        }
-        if (grid.scrollWidth > grid.clientWidth) {
+        if (grid.scrollWidth > grid.clientWidth && Math.abs(dx) > 6) {
+          dragged = true;
           e.preventDefault();
           grid.scrollLeft = startScrollLeft - dx;
         }
       });
 
       function endDrag() {
+        if (dragged) {
+          suppressClick = true;
+        }
         isPointerDown = false;
       }
       grid.addEventListener('pointerup', endDrag);
@@ -355,10 +358,10 @@ approach.</font>
       grid.addEventListener('pointerleave', endDrag);
 
       grid.addEventListener('click', function (e) {
-        if (moved) {
+        if (suppressClick) {
           e.preventDefault();
           e.stopPropagation();
-          moved = false;
+          suppressClick = false;
         }
       }, true);
     });
